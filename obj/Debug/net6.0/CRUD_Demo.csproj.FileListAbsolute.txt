@@ -1,0 +1,9 @@
+/mnt/c/Users/11917/Downloads/ANSIBLE/PIPELINE/CRUD_Demo/CRUD_Demo/obj/Debug/net6.0/CRUD_Demo.csproj.AssemblyReference.cache
+/mnt/c/Users/11917/Downloads/ANSIBLE/PIPELINE/CRUD_Demo/CRUD_Demo/obj/Debug/net6.0/CRUD_Demo.GeneratedMSBuildEditorConfig.editorconfig
+/mnt/c/Users/11917/Downloads/ANSIBLE/PIPELINE/CRUD_Demo/CRUD_Demo/obj/Debug/net6.0/CRUD_Demo.AssemblyInfoInputs.cache
+/mnt/c/Users/11917/Downloads/ANSIBLE/PIPELINE/CRUD_Demo/CRUD_Demo/obj/Debug/net6.0/CRUD_Demo.AssemblyInfo.cs
+/mnt/c/Users/11917/Downloads/ANSIBLE/PIPELINE/CRUD_Demo/CRUD_Demo/obj/Debug/net6.0/CRUD_Demo.csproj.CoreCompileInputs.cache
+/mnt/c/Users/11917/Downloads/ANSIBLE/PIPELINE/CRUD_Demo/CRUD_Demo/obj/Debug/net6.0/CRUD_Demo.MvcApplicationPartsAssemblyInfo.cs
+/mnt/c/Users/11917/Downloads/ANSIBLE/PIPELINE/CRUD_Demo/CRUD_Demo/obj/Debug/net6.0/CRUD_Demo.MvcApplicationPartsAssemblyInfo.cache
+/mnt/c/Users/11917/Downloads/ANSIBLE/PIPELINE/CRUD_Demo/CRUD_Demo/obj/Debug/net6.0/CRUD_Demo.RazorAssemblyInfo.cache
+/mnt/c/Users/11917/Downloads/ANSIBLE/PIPELINE/CRUD_Demo/CRUD_Demo/obj/Debug/net6.0/CRUD_Demo.RazorAssemblyInfo.cs

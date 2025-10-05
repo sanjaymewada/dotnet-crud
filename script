@@ -1,0 +1,348 @@
+USE `Kunal_Demo`;
+ 
+/* SQLINES DEMO *** able [dbo].[__EFMigrationsHistory]    Script Date: 19/09/2025 1:44:40 PM ******/
+/* SET ANSI_NULLS ON */
+ 
+/* SET QUOTED_IDENTIFIER ON */
+ 
+-- SQLINES FOR EVALUATION USE ONLY (14 DAYS)
+CREATE TABLE `__EFMigrationsHistory`(
+	`MigrationId` nvarchar(150) NOT NULL,
+	`ProductVersion` nvarchar(32) NOT NULL,
+ /* SQLines: Name ignored CONSTRAINT `PK___EFMigrationsHistory` */ PRIMARY KEY 
+(
+	`MigrationId` ASC
+) 
+);
+ 
+/* SQLINES DEMO *** able [dbo].[AspNetRoleClaims]    Script Date: 19/09/2025 1:44:40 PM ******/
+/* SET ANSI_NULLS ON */
+ 
+/* SET QUOTED_IDENTIFIER ON */
+ 
+CREATE TABLE `AspNetRoleClaims`(
+	`Id` int AUTO_INCREMENT NOT NULL,
+	`RoleId` nvarchar(450) NOT NULL,
+	`ClaimType` Longtext NULL,
+	`ClaimValue` Longtext NULL,
+ /* SQLines: Name ignored CONSTRAINT `PK_AspNetRoleClaims` */ PRIMARY KEY 
+(
+	`Id` ASC
+) 
+);
+ 
+/* SQLINES DEMO *** able [dbo].[AspNetRoles]    Script Date: 19/09/2025 1:44:40 PM ******/
+/* SET ANSI_NULLS ON */
+ 
+/* SET QUOTED_IDENTIFIER ON */
+ 
+CREATE TABLE `AspNetRoles`(
+	`Id` nvarchar(450) NOT NULL,
+	`Name` nvarchar(256) NULL,
+	`NormalizedName` nvarchar(256) NULL,
+	`ConcurrencyStamp` Longtext NULL,
+ /* SQLines: Name ignored CONSTRAINT `PK_AspNetRoles` */ PRIMARY KEY 
+(
+	`Id` ASC
+) 
+);
+ 
+/* SQLINES DEMO *** able [dbo].[AspNetUserClaims]    Script Date: 19/09/2025 1:44:40 PM ******/
+/* SET ANSI_NULLS ON */
+ 
+/* SET QUOTED_IDENTIFIER ON */
+ 
+CREATE TABLE `AspNetUserClaims`(
+	`Id` int AUTO_INCREMENT NOT NULL,
+	`UserId` nvarchar(450) NOT NULL,
+	`ClaimType` Longtext NULL,
+	`ClaimValue` Longtext NULL,
+ /* SQLines: Name ignored CONSTRAINT `PK_AspNetUserClaims` */ PRIMARY KEY 
+(
+	`Id` ASC
+) 
+);
+ 
+/* SQLINES DEMO *** able [dbo].[AspNetUserLogins]    Script Date: 19/09/2025 1:44:40 PM ******/
+/* SET ANSI_NULLS ON */
+ 
+/* SET QUOTED_IDENTIFIER ON */
+ 
+CREATE TABLE `AspNetUserLogins`(
+	`LoginProvider` nvarchar(450) NOT NULL,
+	`ProviderKey` nvarchar(450) NOT NULL,
+	`ProviderDisplayName` Longtext NULL,
+	`UserId` nvarchar(450) NOT NULL,
+ /* SQLines: Name ignored CONSTRAINT `PK_AspNetUserLogins` */ PRIMARY KEY 
+(
+	`LoginProvider` ASC,
+	`ProviderKey` ASC
+) 
+);
+ 
+/* SQLINES DEMO *** able [dbo].[AspNetUserRoles]    Script Date: 19/09/2025 1:44:40 PM ******/
+/* SET ANSI_NULLS ON */
+ 
+/* SET QUOTED_IDENTIFIER ON */
+ 
+CREATE TABLE `AspNetUserRoles`(
+	`UserId` nvarchar(450) NOT NULL,
+	`RoleId` nvarchar(450) NOT NULL,
+ /* SQLines: Name ignored CONSTRAINT `PK_AspNetUserRoles` */ PRIMARY KEY 
+(
+	`UserId` ASC,
+	`RoleId` ASC
+) 
+);
+ 
+/* SQLINES DEMO *** able [dbo].[AspNetUsers]    Script Date: 19/09/2025 1:44:40 PM ******/
+/* SET ANSI_NULLS ON */
+ 
+/* SET QUOTED_IDENTIFIER ON */
+ 
+CREATE TABLE `AspNetUsers`(
+	`Id` nvarchar(450) NOT NULL,
+	`UserName` nvarchar(256) NULL,
+	`NormalizedUserName` nvarchar(256) NULL,
+	`Email` nvarchar(256) NULL,
+	`NormalizedEmail` nvarchar(256) NULL,
+	`EmailConfirmed` Tinyint NOT NULL,
+	`PasswordHash` Longtext NULL,
+	`SecurityStamp` Longtext NULL,
+	`ConcurrencyStamp` Longtext NULL,
+	`PhoneNumber` Longtext NULL,
+	`PhoneNumberConfirmed` Tinyint NOT NULL,
+	`TwoFactorEnabled` Tinyint NOT NULL,
+	`LockoutEnd` Datetime(6) NULL,
+	`LockoutEnabled` Tinyint NOT NULL,
+	`AccessFailedCount` int NOT NULL,
+	`FirstName` Longtext NULL,
+	`LastName` Longtext NULL,
+ /* SQLines: Name ignored CONSTRAINT `PK_AspNetUsers` */ PRIMARY KEY 
+(
+	`Id` ASC
+) 
+);
+ 
+/* SQLINES DEMO *** able [dbo].[AspNetUserTokens]    Script Date: 19/09/2025 1:44:40 PM ******/
+/* SET ANSI_NULLS ON */
+ 
+/* SET QUOTED_IDENTIFIER ON */
+ 
+CREATE TABLE `AspNetUserTokens`(
+	`UserId` nvarchar(450) NOT NULL,
+	`LoginProvider` nvarchar(450) NOT NULL,
+	`Name` nvarchar(450) NOT NULL,
+	`Value` Longtext NULL,
+ /* SQLines: Name ignored CONSTRAINT `PK_AspNetUserTokens` */ PRIMARY KEY 
+(
+	`UserId` ASC,
+	`LoginProvider` ASC,
+	`Name` ASC
+) 
+);
+ 
+/* SQLINES DEMO *** able [dbo].[Cities]    Script Date: 19/09/2025 1:44:40 PM ******/
+/* SET ANSI_NULLS ON */
+ 
+/* SET QUOTED_IDENTIFIER ON */
+ 
+CREATE TABLE `Cities`(
+	`Id` int AUTO_INCREMENT NOT NULL,
+	`Name` nvarchar(100) NOT NULL,
+	`StateId` int NOT NULL,
+ /* SQLines: Name ignored CONSTRAINT `PK_Cities` */ PRIMARY KEY 
+(
+	`Id` ASC
+) 
+);
+ 
+/* SQLINES DEMO *** able [dbo].[Countries]    Script Date: 19/09/2025 1:44:40 PM ******/
+/* SET ANSI_NULLS ON */
+ 
+/* SET QUOTED_IDENTIFIER ON */
+ 
+CREATE TABLE `Countries`(
+	`Id` int AUTO_INCREMENT NOT NULL,
+	`Name` nvarchar(100) NOT NULL,
+ /* SQLines: Name ignored CONSTRAINT `PK_Countries` */ PRIMARY KEY 
+(
+	`Id` ASC
+) 
+);
+ 
+/* SQLINES DEMO *** able [dbo].[Employees]    Script Date: 19/09/2025 1:44:40 PM ******/
+/* SET ANSI_NULLS ON */
+ 
+/* SET QUOTED_IDENTIFIER ON */
+ 
+CREATE TABLE `Employees`(
+	`Id` int AUTO_INCREMENT NOT NULL,
+	`Name` nvarchar(100) NOT NULL,
+	`Department` nvarchar(50) NOT NULL,
+	`Age` int NOT NULL,
+	`HireDate` Datetime(6) NOT NULL,
+	`Email` Longtext NOT NULL,
+	`CityId` int NULL,
+	`CountryId` int NULL,
+	`StateId` int NULL,
+	`DocumentPath` Longtext NULL,
+ /* SQLines: Name ignored CONSTRAINT `PK_Employees` */ PRIMARY KEY 
+(
+	`Id` ASC
+) 
+);
+ 
+/* SQLINES DEMO *** able [dbo].[States]    Script Date: 19/09/2025 1:44:40 PM ******/
+/* SET ANSI_NULLS ON */
+ 
+/* SET QUOTED_IDENTIFIER ON */
+ 
+CREATE TABLE `States`(
+	`Id` int AUTO_INCREMENT NOT NULL,
+	`Name` nvarchar(100) NOT NULL,
+	`CountryId` int NOT NULL,
+ /* SQLines: Name ignored CONSTRAINT `PK_States` */ PRIMARY KEY 
+(
+	`Id` ASC
+) 
+);
+ 
+INSERT `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`) VALUES ('20250826055718_initialrun', '5.0.0');
+INSERT `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`) VALUES ('20250827061005_AddCountryStateCityToEmployee', '5.0.0');
+INSERT `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`) VALUES ('20250827102549_AddDocumentPathToEmployee', '5.0.0');
+INSERT `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`) VALUES ('20250827105641_AddDocumentPathToEmployee', '5.0.0');
+INSERT `__EFMigrationsHistory` (`MigrationId`, `ProductVersion`) VALUES ('20250828101526_AddIdentityTables', '5.0.0');
+ 
+INSERT `AspNetUsers` (`Id`, `UserName`, `NormalizedUserName`, `Email`, `NormalizedEmail`, `EmailConfirmed`, `PasswordHash`, `SecurityStamp`, `ConcurrencyStamp`, `PhoneNumber`, `PhoneNumberConfirmed`, `TwoFactorEnabled`, `LockoutEnd`, `LockoutEnabled`, `AccessFailedCount`, `FirstName`, `LastName`) VALUES ('0d725761-de8e-4536-b5bc-15aa8265bb88', 'kpatil@gmail.com', 'KPATIL@GMAIL.COM', 'kpatil@gmail.com', 'KPATIL@GMAIL.COM', 0, 'AQAAAAEAACcQAAAAEHFpcuXVXxCGZNQs6O46/kxJ3PMsgqpZjaA8vmsCnxsjH04Vw7QJd80eMhj3aKuz7A==', 'D3LVUHC4ONAF6QEJULJQP7Q4STZ42PQ3', '4922a9a5-7f0f-4b68-92fb-5d8103ff9af0', NULL, 0, 0, NULL, 1, 0, 'kamlesh ', 'patil');
+INSERT `AspNetUsers` (`Id`, `UserName`, `NormalizedUserName`, `Email`, `NormalizedEmail`, `EmailConfirmed`, `PasswordHash`, `SecurityStamp`, `ConcurrencyStamp`, `PhoneNumber`, `PhoneNumberConfirmed`, `TwoFactorEnabled`, `LockoutEnd`, `LockoutEnabled`, `AccessFailedCount`, `FirstName`, `LastName`) VALUES ('13811376-6a33-4e9b-b5d2-2c5eac83b694', 'rkhede@gmail.com', 'RKHEDE@GMAIL.COM', 'rkhede@gmail.com', 'RKHEDE@GMAIL.COM', 0, 'AQAAAAEAACcQAAAAEHFpcuXVXxCGZNQs6O46/kxJ3PMsgqpZjaA8vmsCnxsjH04Vw7QJd80eMhj3aKuz7A==', 'ZTAVTTIP6SPC5PLSV6YWIEHMZR2Q67X7', 'b46b3c8c-129f-4e5e-9fa1-29ef0abe2137', NULL, 0, 0, NULL, 1, 0, 'raj', 'khede');
+INSERT `AspNetUsers` (`Id`, `UserName`, `NormalizedUserName`, `Email`, `NormalizedEmail`, `EmailConfirmed`, `PasswordHash`, `SecurityStamp`, `ConcurrencyStamp`, `PhoneNumber`, `PhoneNumberConfirmed`, `TwoFactorEnabled`, `LockoutEnd`, `LockoutEnabled`, `AccessFailedCount`, `FirstName`, `LastName`) VALUES ('252afe1d-7b64-4847-b1e2-bc79f9c9fe00', 'mjhadhav@gmail.com', 'MJHADHAV@GMAIL.COM', 'mjhadhav@gmail.com', 'MJHADHAV@GMAIL.COM', 0, 'AQAAAAEAACcQAAAAEA1xsx+N9FwatoFJ9h8aPmgS9N9pQPp9j6ssxBigLtBUnDcglynb+0fZ1ODoechAvQ==', 'Q4S4RDVB5VP5I6ELFY3N7QG2P6ITLHJO', 'e79ef533-a497-478f-9b88-1d738c1d0712', NULL, 0, 0, NULL, 1, 0, 'manish', 'jadhav');
+INSERT `AspNetUsers` (`Id`, `UserName`, `NormalizedUserName`, `Email`, `NormalizedEmail`, `EmailConfirmed`, `PasswordHash`, `SecurityStamp`, `ConcurrencyStamp`, `PhoneNumber`, `PhoneNumberConfirmed`, `TwoFactorEnabled`, `LockoutEnd`, `LockoutEnabled`, `AccessFailedCount`, `FirstName`, `LastName`) VALUES ('6256fbe6-f6d1-49f5-9f11-0aaf82ccd307', 'arathore@gmail.com', 'ARATHORE@GMAIL.COM', 'arathore@gmail.com', 'ARATHORE@GMAIL.COM', 0, 'AQAAAAEAACcQAAAAEBZu0MnHQcvyRdKXhsi8Yej4BtOnqikv1X6aXvQx8bjQlRWyiSmHWTKmcTAVu2c/9Q==', 'H6Y7P3SE5XMGHVEK245EMHQRS2URB75C', 'a95957bb-6bf8-48ec-8990-f92d804b1976', NULL, 0, 0, NULL, 1, 0, 'aman', 'rathore');
+INSERT `AspNetUsers` (`Id`, `UserName`, `NormalizedUserName`, `Email`, `NormalizedEmail`, `EmailConfirmed`, `PasswordHash`, `SecurityStamp`, `ConcurrencyStamp`, `PhoneNumber`, `PhoneNumberConfirmed`, `TwoFactorEnabled`, `LockoutEnd`, `LockoutEnabled`, `AccessFailedCount`, `FirstName`, `LastName`) VALUES ('635e450b-975c-4ed3-ada0-c972c11e7ddd', 'anay@gmail.com', 'ANAY@GMAIL.COM', 'anay@gmail.com', 'ANAY@GMAIL.COM', 0, 'AQAAAAEAACcQAAAAECPT1invYftNG1xV6Ydizu/7KDRWAoCi6b5Fk02NeVYqHE4buo/Q7AVpX9riNNk++A==', 'ECYYS2A6AZG5GVPYYAOCDJONMBQTJMN6', 'ac664f10-d04c-45bc-b951-df681a435441', NULL, 0, 0, NULL, 1, 0, NULL, NULL);
+INSERT `AspNetUsers` (`Id`, `UserName`, `NormalizedUserName`, `Email`, `NormalizedEmail`, `EmailConfirmed`, `PasswordHash`, `SecurityStamp`, `ConcurrencyStamp`, `PhoneNumber`, `PhoneNumberConfirmed`, `TwoFactorEnabled`, `LockoutEnd`, `LockoutEnabled`, `AccessFailedCount`, `FirstName`, `LastName`) VALUES ('77536b29-0170-4df3-a14d-f5f911e6da35', 'rjain@gmail.com', 'RJAIN@GMAIL.COM', 'rjain@gmail.com', 'RJAIN@GMAIL.COM', 0, 'AQAAAAEAACcQAAAAEGmSAx3blkVlKPWSLMCzgKhEMktxLFZ0f4o6wV2V8p+Jk0NlcPoGWS925rUbmie6bg==', 'DOCCRO3X4SDUWHZYHETPVIYEJIVRUGV7', '0fdcd29b-ea46-469a-9cb4-0543c8273abc', NULL, 0, 0, NULL, 1, 0, 'rishi', 'jain');
+INSERT `AspNetUsers` (`Id`, `UserName`, `NormalizedUserName`, `Email`, `NormalizedEmail`, `EmailConfirmed`, `PasswordHash`, `SecurityStamp`, `ConcurrencyStamp`, `PhoneNumber`, `PhoneNumberConfirmed`, `TwoFactorEnabled`, `LockoutEnd`, `LockoutEnabled`, `AccessFailedCount`, `FirstName`, `LastName`) VALUES ('9a2ba7d9-38d9-4de8-b663-d70b7db30f3c', 'amishra@gmail.com', 'AMISHRA@GMAIL.COM', 'amishra@gmail.com', 'AMISHRA@GMAIL.COM', 0, 'AQAAAAEAACcQAAAAELMlUF0/TZOdbZGj1iFdII/+US5hJtQCp0blp4nGj9EplWOnoOLmr1vNCRDJWPMvbw==', '4E7W2S7KDARWZSWE3PFJODWUYW5HT5CF', 'e08cf4dd-cfef-472f-9d18-1825b0155cc3', NULL, 0, 0, NULL, 1, 0, 'ajay', 'mishra');
+INSERT `AspNetUsers` (`Id`, `UserName`, `NormalizedUserName`, `Email`, `NormalizedEmail`, `EmailConfirmed`, `PasswordHash`, `SecurityStamp`, `ConcurrencyStamp`, `PhoneNumber`, `PhoneNumberConfirmed`, `TwoFactorEnabled`, `LockoutEnd`, `LockoutEnabled`, `AccessFailedCount`, `FirstName`, `LastName`) VALUES ('9f016c54-fcce-4c5b-8af1-c598e019b452', 'spatil@gmail.com', 'SPATIL@GMAIL.COM', 'spatil@gmail.com', 'SPATIL@GMAIL.COM', 0, 'AQAAAAEAACcQAAAAEMzLOHCp4Sn2khJmtppdz8EYvA4Do4WZXSqonPMNOsF4IiLl8ippQvzR0VXEKsmKCg==', 'UR2VSY35WJVC5SUQ236PLIPIFC5P4Q6E', '325c7717-5408-40f8-8fce-a0c4a3bf7b8f', NULL, 0, 0, NULL, 1, 0, 'shyam', 'patil');
+INSERT `AspNetUsers` (`Id`, `UserName`, `NormalizedUserName`, `Email`, `NormalizedEmail`, `EmailConfirmed`, `PasswordHash`, `SecurityStamp`, `ConcurrencyStamp`, `PhoneNumber`, `PhoneNumberConfirmed`, `TwoFactorEnabled`, `LockoutEnd`, `LockoutEnabled`, `AccessFailedCount`, `FirstName`, `LastName`) VALUES ('c3e7f77c-d44f-4e83-bafe-7c0053ea3de8', 'vmahajan@gmail.com', 'VMAHAJAN@GMAIL.COM', 'vmahajan@gmail.com', 'VMAHAJAN@GMAIL.COM', 0, 'AQAAAAEAACcQAAAAEInMZEd0RUFhqJjpQgGBPVHaQFwOqXHh9kFytfK/Ky7h1HnPr5vZF/q5Uiiq+SCoPA==', 'WZOVP4TC75RYZINU2WF2KIBWSFAOHOHA', '8b4cea10-274f-4ed8-99ab-8097108065a7', NULL, 0, 0, NULL, 1, 0, 'vishal', 'mahajan');
+INSERT `AspNetUsers` (`Id`, `UserName`, `NormalizedUserName`, `Email`, `NormalizedEmail`, `EmailConfirmed`, `PasswordHash`, `SecurityStamp`, `ConcurrencyStamp`, `PhoneNumber`, `PhoneNumberConfirmed`, `TwoFactorEnabled`, `LockoutEnd`, `LockoutEnabled`, `AccessFailedCount`, `FirstName`, `LastName`) VALUES ('d4da59fe-1f70-4b85-9f0e-c03c4d623828', 'dilip11+@gmail.com', 'DILIP11+@GMAIL.COM', 'dilip11+@gmail.com', 'DILIP11+@GMAIL.COM', 0, 'AQAAAAEAACcQAAAAEHDZzphl9Uu6cW6afOK4PhZb9AnZRSGzxAXdr6jpZGjuWMAvkZcT3Xhvrhe4YOukew==', 'JEVHCQTUOTZW4IPVSKKZN6R3WKLUCROD', 'eca21530-9e9e-4728-9eee-c270558403d3', NULL, 0, 0, NULL, 1, 0, 'dilip', 'mahajn');
+INSERT `AspNetUsers` (`Id`, `UserName`, `NormalizedUserName`, `Email`, `NormalizedEmail`, `EmailConfirmed`, `PasswordHash`, `SecurityStamp`, `ConcurrencyStamp`, `PhoneNumber`, `PhoneNumberConfirmed`, `TwoFactorEnabled`, `LockoutEnd`, `LockoutEnabled`, `AccessFailedCount`, `FirstName`, `LastName`) VALUES ('ff21b1b9-0d43-4d7c-a5e6-d71ffb0b0db9', 'rpatil@gmail.com', 'RPATIL@GMAIL.COM', 'rpatil@gmail.com', 'RPATIL@GMAIL.COM', 0, 'AQAAAAEAACcQAAAAELh2SkVmTKGWr5tHeJ+RM5ipXuaCSeZ+w4JXnPethQOs/VtHYesPzc8sHrMbBy5ybA==', 'TPTZSUKM3V7DY4MTVRAY6GW6PM4RNVS7', '68d62caf-170a-4987-93b5-66c4401d6531', NULL, 0, 0, NULL, 1, 0, 'ram', 'patil');
+ 
+/* SET IDENTITY_INSERT [dbo].[Cities] ON */ 
+
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (1, 'Mumbai', 1);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (2, 'Pune', 1);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (3, 'Bangalore', 2);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (4, 'Mysore', 2);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (5, 'Los Angeles', 3);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (6, 'San Francisco', 3);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (7, 'Houston', 4);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (8, 'Dallas', 4);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (9, 'London City', 5);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (10, 'Toronto', 6);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (11, 'Ottawa', 6);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (12, 'Vancouver', 7);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (13, 'Victoria', 7);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (14, 'Sydney', 8);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (15, 'Newcastle', 8);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (16, 'Melbourne', 9);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (17, 'Geelong', 9);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (27, 'Indore', 11);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (28, 'Bhopal', 11);
+INSERT `Cities` (`Id`, `Name`, `StateId`) VALUES (29, 'Burhanpur', 11);
+/* SET IDENTITY_INSERT [dbo].[Cities] OFF */
+ 
+/* SET IDENTITY_INSERT [dbo].[Countries] ON */ 
+
+INSERT `Countries` (`Id`, `Name`) VALUES (1, 'India');
+INSERT `Countries` (`Id`, `Name`) VALUES (2, 'USA');
+INSERT `Countries` (`Id`, `Name`) VALUES (3, 'UK');
+INSERT `Countries` (`Id`, `Name`) VALUES (4, 'Canada');
+INSERT `Countries` (`Id`, `Name`) VALUES (5, 'Australia');
+/* SET IDENTITY_INSERT [dbo].[Countries] OFF */
+ 
+/* SET IDENTITY_INSERT [dbo].[Employees] ON */ 
+
+INSERT `Employees` (`Id`, `Name`, `Department`, `Age`, `HireDate`, `Email`, `CityId`, `CountryId`, `StateId`, `DocumentPath`) VALUES (4, 'Lokesh', 'IT', 22, CAST('2024-09-25T00:00:00.0000000' AS DATETIME(6)), 'Lokesh@gmail.com', 1, 1, 1, NULL);
+INSERT `Employees` (`Id`, `Name`, `Department`, `Age`, `HireDate`, `Email`, `CityId`, `CountryId`, `StateId`, `DocumentPath`) VALUES (5, 'Lokesh1', 'IT', 33, CAST('2025-03-05T00:00:00.0000000' AS DATETIME(6)), 'Lokesh1@gmail.com', 4, 1, 2, '/uploads/8978182e-15bf-4f44-9581-2fc9633729c8_Screenshot 2025-08-27 115545.png');
+INSERT `Employees` (`Id`, `Name`, `Department`, `Age`, `HireDate`, `Email`, `CityId`, `CountryId`, `StateId`, `DocumentPath`) VALUES (7, 'rushi', 'EC', 35, CAST('2024-09-19T00:00:00.0000000' AS DATETIME(6)), 'rushi@gmail.com', 1, 1, 1, '/uploads/683341a9-f0eb-46cd-8397-16cf29e6535d_Screenshot 2025-08-30 141013.png');
+INSERT `Employees` (`Id`, `Name`, `Department`, `Age`, `HireDate`, `Email`, `CityId`, `CountryId`, `StateId`, `DocumentPath`) VALUES (8, 'dilip', 'IT', 48, CAST('2024-12-04T00:00:00.0000000' AS DATETIME(6)), 'dilip@gmail.com', 3, 1, 2, '/uploads/e9858783-2933-489f-b7c9-7cce4f9986a0_Screenshot 2025-08-30 141048.png');
+INSERT `Employees` (`Id`, `Name`, `Department`, `Age`, `HireDate`, `Email`, `CityId`, `CountryId`, `StateId`, `DocumentPath`) VALUES (12, 'abhishek@', 'IT', 52, CAST('2025-09-05T00:00:00.0000000' AS DATETIME(6)), 'Abhi+@gmail.com', 2, 1, 1, '/uploads/d175efae-ffe8-46f4-be5b-5361fd4374b9_Screenshot 2025-08-30 141048.png');
+INSERT `Employees` (`Id`, `Name`, `Department`, `Age`, `HireDate`, `Email`, `CityId`, `CountryId`, `StateId`, `DocumentPath`) VALUES (13, 'dilip11', 'EC', 22, CAST('2025-06-04T00:00:00.0000000' AS DATETIME(6)), 'dilip11+@gmail.com', 2, 1, 1, '/uploads/ef492c1c-76b8-45d2-aa7f-aaedad0b902c_11635825-abstract-square-interface-modern-background-concept-fingerprint-digital-scanning-visual-security-system-authentication-login.htm');
+/* SET IDENTITY_INSERT [dbo].[Employees] OFF */
+ 
+/* SET IDENTITY_INSERT [dbo].[States] ON */ 
+
+INSERT `States` (`Id`, `Name`, `CountryId`) VALUES (1, 'Maharashtra', 1);
+INSERT `States` (`Id`, `Name`, `CountryId`) VALUES (2, 'Karnataka', 1);
+INSERT `States` (`Id`, `Name`, `CountryId`) VALUES (3, 'California', 2);
+INSERT `States` (`Id`, `Name`, `CountryId`) VALUES (4, 'Texas', 2);
+INSERT `States` (`Id`, `Name`, `CountryId`) VALUES (5, 'London', 3);
+INSERT `States` (`Id`, `Name`, `CountryId`) VALUES (6, 'Ontario', 4);
+INSERT `States` (`Id`, `Name`, `CountryId`) VALUES (7, 'British Columbia', 4);
+INSERT `States` (`Id`, `Name`, `CountryId`) VALUES (8, 'New South Wales', 5);
+INSERT `States` (`Id`, `Name`, `CountryId`) VALUES (9, 'Victoria', 5);
+INSERT `States` (`Id`, `Name`, `CountryId`) VALUES (11, 'Madhya Pradesh', 1);
+/* SET IDENTITY_INSERT [dbo].[States] OFF */
+ 
+ALTER TABLE `AspNetRoleClaims` ADD  CONSTRAINT `FK_AspNetRoleClaims_AspNetRoles_RoleId` FOREIGN KEY(`RoleId`)
+REFERENCES `AspNetRoles` (`Id`)
+ON DELETE CASCADE;
+ 
+/* ALTER TABLE `AspNetRoleClaims` CHECK CONSTRAINT `FK_AspNetRoleClaims_AspNetRoles_RoleId`; */
+ 
+ALTER TABLE `AspNetUserClaims` ADD  CONSTRAINT `FK_AspNetUserClaims_AspNetUsers_UserId` FOREIGN KEY(`UserId`)
+REFERENCES `AspNetUsers` (`Id`)
+ON DELETE CASCADE;
+ 
+/* ALTER TABLE `AspNetUserClaims` CHECK CONSTRAINT `FK_AspNetUserClaims_AspNetUsers_UserId`; */
+ 
+ALTER TABLE `AspNetUserLogins` ADD  CONSTRAINT `FK_AspNetUserLogins_AspNetUsers_UserId` FOREIGN KEY(`UserId`)
+REFERENCES `AspNetUsers` (`Id`)
+ON DELETE CASCADE;
+ 
+/* ALTER TABLE `AspNetUserLogins` CHECK CONSTRAINT `FK_AspNetUserLogins_AspNetUsers_UserId`; */
+ 
+ALTER TABLE `AspNetUserRoles` ADD  CONSTRAINT `FK_AspNetUserRoles_AspNetRoles_RoleId` FOREIGN KEY(`RoleId`)
+REFERENCES `AspNetRoles` (`Id`)
+ON DELETE CASCADE;
+ 
+/* ALTER TABLE `AspNetUserRoles` CHECK CONSTRAINT `FK_AspNetUserRoles_AspNetRoles_RoleId`; */
+ 
+ALTER TABLE `AspNetUserRoles` ADD  CONSTRAINT `FK_AspNetUserRoles_AspNetUsers_UserId` FOREIGN KEY(`UserId`)
+REFERENCES `AspNetUsers` (`Id`)
+ON DELETE CASCADE;
+ 
+/* ALTER TABLE `AspNetUserRoles` CHECK CONSTRAINT `FK_AspNetUserRoles_AspNetUsers_UserId`; */
+ 
+ALTER TABLE `AspNetUserTokens` ADD  CONSTRAINT `FK_AspNetUserTokens_AspNetUsers_UserId` FOREIGN KEY(`UserId`)
+REFERENCES `AspNetUsers` (`Id`)
+ON DELETE CASCADE;
+ 
+/* ALTER TABLE `AspNetUserTokens` CHECK CONSTRAINT `FK_AspNetUserTokens_AspNetUsers_UserId`; */
+ 
+ALTER TABLE `Cities` ADD  CONSTRAINT `FK_Cities_States_StateId` FOREIGN KEY(`StateId`)
+REFERENCES `States` (`Id`)
+ON DELETE CASCADE;
+ 
+/* ALTER TABLE `Cities` CHECK CONSTRAINT `FK_Cities_States_StateId`; */
+ 
+ALTER TABLE `Employees` ADD  CONSTRAINT `FK_Employees_Cities_CityId` FOREIGN KEY(`CityId`)
+REFERENCES `Cities` (`Id`);
+ 
+/* ALTER TABLE `Employees` CHECK CONSTRAINT `FK_Employees_Cities_CityId`; */
+ 
+ALTER TABLE `Employees` ADD  CONSTRAINT `FK_Employees_Countries_CountryId` FOREIGN KEY(`CountryId`)
+REFERENCES `Countries` (`Id`);
+ 
+/* ALTER TABLE `Employees` CHECK CONSTRAINT `FK_Employees_Countries_CountryId`; */
+ 
+ALTER TABLE `Employees` ADD  CONSTRAINT `FK_Employees_States_StateId` FOREIGN KEY(`StateId`)
+REFERENCES `States` (`Id`);
+ 
+/* ALTER TABLE `Employees` CHECK CONSTRAINT `FK_Employees_States_StateId`; */
+ 
+ALTER TABLE `States` ADD  CONSTRAINT `FK_States_Countries_CountryId` FOREIGN KEY(`CountryId`)
+REFERENCES `Countries` (`Id`)
+ON DELETE CASCADE;
+ 
+/* ALTER TABLE `States` CHECK CONSTRAINT `FK_States_Countries_CountryId`; */
+ 

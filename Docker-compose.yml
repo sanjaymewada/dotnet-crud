@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: crud-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123        # Root password
+      MYSQL_DATABASE: Kunal_Demo          # Default database
+      MYSQL_USER: appuser                  # App user
+      MYSQL_PASSWORD: app@123             # App user password
+    ports:
+      - "3306:3306"                       # Host access to MySQL
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  # CRUD Demo .NET 6 App
+  crud-demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: crud-demo
+    depends_on:
+      - mysql
+    ports:
+      - "5000:5000"
+    environment:
+      # SQL Server replaced with MySQL connection string
+      ConnectionStrings__DefaultConnection: "Server=mysql;Database=Kunal_Demo;User Id=appuser;Password=app@123;"
+      ASPNETCORE_ENVIRONMENT: Development
+
+volumes:
+  mysql_data:

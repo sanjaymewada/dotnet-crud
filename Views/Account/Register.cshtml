@@ -1,0 +1,97 @@
+﻿@model CRUD_Demo.Models.RegisterViewModel
+
+<style>
+    body {
+        background-image: url('/images/3139256.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: Arial, sans-serif;
+    }
+
+    .glass-card {
+        background: rgba(255, 255, 255, 0.15); /* halki transparency */
+        backdrop-filter: blur(10px); /* glass blur effect */
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        color: white;
+    }
+
+        .glass-card .form-control {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+            .glass-card .form-control::placeholder {
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+        .glass-card label {
+            color: #fff;
+        }
+
+        .glass-card .text-danger {
+            color: #ffb3b3 !important;
+        }
+</style>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card glass-card">
+                <div class="card-header bg-transparent text-white text-center">
+                    <h3>User Registration</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="Register" method="post">
+
+                        <div class="form-group mb-3">
+                            <label asp-for="FirstName" class="form-label"></label>
+                            <input asp-for="FirstName" class="form-control" placeholder="Enter your first name" />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="LastName" class="form-label"></label>
+                            <input asp-for="LastName" class="form-control" placeholder="Enter your last name" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Email" class="form-label"></label>
+                            <input asp-for="Email" class="form-control" placeholder="Enter your email address" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Password" class="form-label"></label>
+                            <input asp-for="Password" class="form-control" placeholder="Enter a secure password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="ConfirmPassword" class="form-label"></label>
+                            <input asp-for="ConfirmPassword" class="form-control" placeholder="Confirm your password" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-custom btn-primary w-100">Register</button>
+                    </form>
+                </div>
+                <div class="card-footer text-center bg-transparent text-white">
+                    <small>Already have an account? <a asp-action="Login" class="text-warning">Login here</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

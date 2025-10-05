@@ -1,0 +1,45 @@
+﻿@model IEnumerable<CRUD_Demo.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employees";
+}
+
+<h2>Employees</h2>
+
+<div class="d-flex justify-content-between mb-3">
+    <a asp-action="Create" class="btn btn-primary">Create New Employee</a>
+
+    @* <form asp-controller="Account" asp-action="Logout" method="post" style="display:inline;">
+        <button type="submit" class="btn btn-danger">Logout</button>
+    </form> *@
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Age</th>
+            <th>Hire Date</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var emp in Model)
+        {
+            <tr>
+                <td>@emp.Name</td>
+                <td>@emp.Department</td>
+                <td>@emp.Age</td>
+                <td>@emp.HireDate.ToShortDateString()</td>
+                <td>@emp.Email</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@emp.Id" class="btn btn-info btn-sm">Details</a>
+                    <a asp-action="Edit" asp-route-id="@emp.Id" class="btn btn-warning btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@emp.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

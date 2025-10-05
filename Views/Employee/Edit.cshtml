@@ -1,0 +1,119 @@
+﻿@model CRUD_Demo.Models.Employee
+
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+
+<h2>Edit Employee</h2>
+
+<form asp-action="Edit" asp-controller="Employee" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Department"></label>
+        <input asp-for="Department" class="form-control" />
+        <span asp-validation-for="Department" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Age"></label>
+        <input asp-for="Age" class="form-control" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="HireDate"></label>
+        <input asp-for="HireDate" class="form-control" type="date" />
+        <span asp-validation-for="HireDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="CountryId">Country</label>
+        <select asp-for="CountryId" class="form-control"
+                asp-items="ViewBag.Countries ?? new SelectList(Enumerable.Empty<SelectListItem>())">
+            <option value="">-- Select Country --</option>
+        </select>
+        <span asp-validation-for="CountryId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="StateId">State</label>
+        <select asp-for="StateId" class="form-control"
+                asp-items="ViewBag.States ?? new SelectList(Enumerable.Empty<SelectListItem>())">
+            <option value="">-- Select State --</option>
+        </select>
+        <span asp-validation-for="StateId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="CityId">City</label>
+        <select asp-for="CityId" class="form-control"
+                asp-items="ViewBag.Cities ?? new SelectList(Enumerable.Empty<SelectListItem>())">
+            <option value="">-- Select City --</option>
+        </select>
+        <span asp-validation-for="CityId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Upload Document</label>
+        <input type="file" name="Document" class="form-control" />
+    </div>
+
+    @if (!string.IsNullOrEmpty(Model.DocumentPath))
+    {
+        <p>Current File: <a href="@Model.DocumentPath" target="_blank">View</a></p>
+    }
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#CountryId').change(function () {
+                var countryId = $(this).val();
+                $('#StateId').html('<option value="">-- Loading States --</option>');
+                $('#CityId').html('<option value="">-- Select City --</option>');
+
+                if (countryId) {
+                    $.post('@Url.Action("GetStatesByCountry")', { countryId: countryId }, function (data) {
+                        var items = '<option value="">-- Select State --</option>';
+                        $.each(data, function (i, state) {
+                            items += `<option value="${state.id}">${state.name}</option>`;
+                        });
+                        $('#StateId').html(items);
+                    });
+                }
+            });
+
+            $('#StateId').change(function () {
+                var stateId = $(this).val();
+                $('#CityId').html('<option value="">-- Loading Cities --</option>');
+
+                if (stateId) {
+                    $.post('@Url.Action("GetCitiesByState")', { stateId: stateId }, function (data) {
+                        var items = '<option value="">-- Select City --</option>';
+                        $.each(data, function (i, city) {
+                            items += `<option value="${city.id}">${city.name}</option>`;
+                        });
+                        $('#CityId').html(items);
+                    });
+                }
+            });
+        });
+    </script>
+}
